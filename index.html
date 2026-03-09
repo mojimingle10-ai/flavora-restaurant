@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavora Indian Kitchen | The Royal Spices & Digital Dining</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,900&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --gold: #C5A059; --dark: #080808; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark); color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Luxury Effects */
+        .gold-grad { background: linear-gradient(135deg, #C5A059 0%, #F1D38E 50%, #C5A059 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-gold-grad { background: linear-gradient(135deg, #C5A059 0%, #F1D38E 50%, #C5A059 100%); }
+        .luxury-border { border: 1px solid rgba(197, 160, 89, 0.2); transition: 0.5s; }
+        .luxury-border:hover { border-color: var(--gold); }
+        
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1s ease-out forwards; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #080808; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+        /* Cart Overlay */
+        #cart-modal { backdrop-filter: blur(15px); transition: 0.4s ease-in-out; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-gold-grad text-black text-[10px] py-1.5 text-center font-bold uppercase tracking-[0.4em] z-[110] relative">
+        🔱 Experience the Grandeur of Ancient India • Now Delivering Luxury to Your Doorstep 🔱
+    </div>
+
+    <nav class="sticky top-0 z-[100] bg-black/90 border-b border-white/5 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-3xl font-black serif tracking-tighter gold-grad">FLAVORA</span>
+                <span class="text-[9px] text-gray-400 uppercase tracking-[0.4em] -mt-1">Indian Kitchen</span>
+            </div>
+            <div class="hidden lg:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium text-gray-400">
+                <a href="#home" class="hover:text-[#C5A059] transition">Home</a>
+                <a href="#about" class="hover:text-[#C5A059] transition">The Heritage</a>
+                <a href="#menu" class="hover:text-[#C5A059] transition">Menu & Order</a>
+                <a href="#reserve" class="hover:text-[#C5A059] transition">Reservations</a>
+            </div>
+            <button onclick="toggleCart()" class="relative bg-white/5 p-3 rounded-full border border-white/10 hover:border-[#C5A059] transition">
+                <i class="fa fa-shopping-bag gold-grad"></i>
+                <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-[90vh] flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30 scale-110"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+        
+        <div class="relative z-10 px-4 fade-in">
+            <h2 class="text-[#C5A059] text-sm uppercase tracking-[0.6em] mb-4">Atithi Devo Bhava</h2>
+            <h1 class="text-6xl md:text-9xl font-bold serif italic mb-6">A Royal <span class="gold-grad text-nowrap">Legacy</span></h1>
+            <p class="max-w-xl mx-auto text-gray-400 font-light text-sm md:text-base leading-relaxed mb-10">
+                From the kitchens of the Maharajas to your modern table, we bring you 500 years of culinary history wrapped in gold and spices.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#menu" class="px-10 py-4 bg-gold-grad text-black font-bold text-xs uppercase tracking-widest hover:brightness-110 transition">Order Online</a>
+                <a href="#reserve" class="px-10 py-4 border border-[#C5A059] text-[#C5A059] font-bold text-xs uppercase tracking-widest hover:bg-[#C5A059] hover:text-black transition">Book Table</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-zinc-950 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-center">
+            <div><span class="block text-4xl gold-grad serif font-bold mb-2">25+</span><span class="text-[10px] uppercase tracking-widest text-gray-500">Years of Heritage</span></div>
+            <div><span class="block text-4xl gold-grad serif font-bold mb-2">150+</span><span class="text-[10px] uppercase tracking-widest text-gray-500">Ancient Recipes</span></div>
+            <div><span class="block text-4xl gold-grad serif font-bold mb-2">30+</span><span class="text-[10px] uppercase tracking-widest text-gray-500">Global Awards</span></div>
+            <div><span class="block text-4xl gold-grad serif font-bold mb-2">12</span><span class="text-[10px] uppercase tracking-widest text-gray-500">Master Chefs</span></div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 bg-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl serif italic gold-grad mb-4">The Grand Menu</h2>
+                <p class="text-gray-500 uppercase tracking-widest text-xs">Handpicked Delicacies for the Connoisseur</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-xl serif border-b border-[#C5A059]/30 pb-4 mb-8 uppercase tracking-widest">Shuruat <span class="text-xs text-gray-500 ml-2">(Starters)</span></h3>
+                    <div class="space-y-10">
+                        <div class="flex items-center gap-6 group luxury-border p-4 rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" class="w-20 h-20 object-cover rounded shadow-lg transition group-hover:scale-110" alt="Paneer Tikka">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h4 class="font-bold text-sm tracking-wide">Zafrani Paneer Tikka</h4>
+                                    <span class="gold-grad font-bold">₹595</span>
+                                </div>
+                                <p class="text-[11px] text-gray-500 mb-3 italic">Saffron & hung curd marinated cottage cheese.</p>
+                                <button onclick="addToCart('Zafrani Paneer Tikka', 595)" class="text-[9px] font-black uppercase tracking-widest text-[#C5A059] border border-[#C5A059]/40 px-3 py-1.5 hover:bg-[#C5A059] hover:text-black transition">Add to Order</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 group luxury-border p-4 rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1601050638917-3d8bc63a8a7b?auto=format&fit=crop&q=80" class="w-20 h-20 object-cover rounded shadow-lg transition group-hover:scale-110" alt="Galouti Kebab">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h4 class="font-bold text-sm tracking-wide">Lucknowi Galouti Kebab</h4>
+                                    <span class="gold-grad font-bold">₹750</span>
+                                </div>
+                                <p class="text-[11px] text-gray-500 mb-3 italic">Melt-in-mouth smoked lamb patties.</p>
+                                <button onclick="addToCart('Lucknowi Galouti Kebab', 750)" class="text-[9px] font-black uppercase tracking-widest text-[#C5A059] border border-[#C5A059]/40 px-3 py-1.5 hover:bg-[#C5A059] hover:text-black transition">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl serif border-b border-[#C5A059]/30 pb-4 mb-8 uppercase tracking-widest">Mukhya Bhojan <span class="text-xs text-gray-500 ml-2">(Mains)</span></h3>
+                    <div class="space-y-10">
+                        <div class="flex items-center gap-6 group luxury-border p-4 rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1603894584104-63327d5303a2?auto=format&fit=crop&q=80" class="w-20 h-20 object-cover rounded shadow-lg transition group-hover:scale-110" alt="Butter Chicken">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h4 class="font-bold text-sm tracking-wide">Classic Butter Chicken</h4>
+                                    <span class="gold-grad font-bold">₹825</span>
+                                </div>
+                                <p class="text-[11px] text-gray-500 mb-3 italic">Old Delhi style velvet tomato gravy.</p>
+                                <button onclick="addToCart('Classic Butter Chicken', 825)" class="text-[9px] font-black uppercase tracking-widest text-[#C5A059] border border-[#C5A059]/40 px-3 py-1.5 hover:bg-[#C5A059] hover:text-black transition">Add to Order</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 group luxury-border p-4 rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21bc4a4f8?auto=format&fit=crop&q=80" class="w-20 h-20 object-cover rounded shadow-lg transition group-hover:scale-110" alt="Dum Biryani">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <h4 class="font-bold text-sm tracking-wide">Awadhi Dum Biryani</h4>
+                                    <span class="gold-grad font-bold">₹950</span>
+                                </div>
+                                <p class="text-[11px] text-gray-500 mb-3 italic">Slow-cooked rice with secret spices.</p>
+                                <button onclick="addToCart('Awadhi Dum Biryani', 950)" class="text-[9px] font-black uppercase tracking-widest text-[#C5A059] border border-[#C5A059]/40 px-3 py-1.5 hover:bg-[#C5A059] hover:text-black transition">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="h-80 bg-fixed bg-center bg-cover flex items-center justify-center relative" style="background-image: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative text-center">
+            <h3 class="text-4xl md:text-5xl serif italic gold-grad">Crafting Flavors, Crafting Memories</h3>
+            <p class="uppercase tracking-[0.4em] text-xs mt-4">Fine Dining Redefined</p>
+        </div>
+    </div>
+
+    <section id="reserve" class="py-24 bg-zinc-950 px-6">
+        <div class="max-w-4xl mx-auto luxury-border p-12 bg-black/50 rounded-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-10 opacity-5 text-9xl italic serif">F</div>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl serif gold-grad mb-2">Reserve Your Table</h2>
+                <p class="text-[10px] text-gray-500 tracking-[0.3em] uppercase">Limited availability for dinner service</p>
+            </div>
+            <form class="grid md:grid-cols-2 gap-8">
+                <input type="text" placeholder="Full Name" class="bg-transparent border-b border-white/10 py-3 px-1 text-sm outline-none focus:border-[#C5A059] transition uppercase tracking-widest">
+                <input type="tel" placeholder="Phone Number" class="bg-transparent border-b border-white/10 py-3 px-1 text-sm outline-none focus:border-[#C5A059] transition uppercase tracking-widest">
+                <input type="date" class="bg-transparent border-b border-white/10 py-3 px-1 text-sm outline-none focus:border-[#C5A059] transition text-gray-500">
+                <select class="bg-transparent border-b border-white/10 py-3 px-1 text-sm outline-none focus:border-[#C5A059] transition text-gray-500 uppercase">
+                    <option class="bg-black">2 People</option>
+                    <option class="bg-black">4 People</option>
+                    <option class="bg-black">6+ People</option>
+                </select>
+                <button class="md:col-span-2 bg-gold-grad text-black font-black py-4 uppercase text-xs tracking-[0.5em] mt-6 shadow-2xl hover:scale-[1.02] transition">Confirm Reservation</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="cart-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-end">
+        <div class="absolute inset-0 bg-black/80" onclick="toggleCart()"></div>
+        <div class="relative w-full max-w-md h-full bg-[#0a0a0a] border-l border-[#C5A059]/20 p-8 flex flex-col shadow-2xl">
+            <div class="flex justify-between items-center mb-12">
+                <h3 class="text-3xl serif italic gold-grad">Your Bag</h3>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-white"><i class="fa fa-times text-xl"></i></button>
+            </div>
+            
+            <div id="cart-items-list" class="flex-1 overflow-y-auto space-y-6 pr-2">
+                <p class="text-gray-600 italic text-center text-sm py-20">Your royal platter is empty...</p>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 mt-auto">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xs uppercase tracking-widest text-gray-500">Subtotal</span>
+                    <span id="cart-total" class="text-2xl gold-grad serif">₹0</span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-gold-grad text-black font-black py-5 uppercase text-[10px] tracking-[0.4em] shadow-xl hover:brightness-110 transition">Send Order via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black pt-20 pb-10 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1">
+                <h4 class="text-3xl font-black serif gold-grad mb-6">FLAVORA</h4>
+                <p class="text-gray-500 text-[11px] leading-loose italic tracking-widest uppercase">The heart of Indian fine dining since 1999. Experience the ritual of flavor.</p>
+            </div>
+            <div>
+                <h5 class="text-[10px] font-bold uppercase gold-grad mb-8 tracking-widest">Connect</h5>
+                <p class="text-xs text-gray-400 leading-relaxed">+91 11 4567 8900<br>dine@flavora-india.com<br>12, Lodhi Estate, New Delhi</p>
+            </div>
+            <div>
+                <h5 class="text-[10px] font-bold uppercase gold-grad mb-8 tracking-widest">Follow</h5>
+                <div class="flex gap-6 text-lg text-gray-500">
+                    <i class="fab fa-instagram hover:text-[#C5A059] cursor-pointer"></i>
+                    <i class="fab fa-facebook-f hover:text-[#C5A059] cursor-pointer"></i>
+                    <i class="fab fa-youtube hover:text-[#C5A059] cursor-pointer"></i>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-[10px] font-bold uppercase gold-grad mb-8 tracking-widest">Newsletter</h5>
+                <input type="text" placeholder="Your Email" class="w-full bg-transparent border-b border-white/10 py-2 text-xs outline-none focus:border-[#C5A059]">
+            </div>
+        </div>
+        <p class="text-center text-[8px] text-gray-800 uppercase tracking-[0.6em] pt-12 border-t border-white/5">© 2026 Flavora Luxury Kitchen | Designed for Greatness</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        let totalAmount = 0;
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+            
+            // Notification toast feel
+            const btn = event.currentTarget;
+            btn.innerText = "✓ ADDED";
+            btn.classList.add('bg-[#C5A059]', 'text-black');
+            setTimeout(() => {
+                btn.innerText = "Add to Order";
+                btn.classList.remove('bg-[#C5A059]', 'text-black');
+            }, 1000);
+        }
+
+        function updateCart() {
+            const list = document.getElementById('cart-items-list');
+            const count = document.getElementById('cart-count');
+            const total = document.getElementById('cart-total');
+            
+            count.innerText = cart.length;
+            totalAmount = 0;
+
+            if (cart.length === 0) {
+                list.innerHTML = '<p class="text-gray-600 italic text-center text-sm py-20">Your royal platter is empty...</p>';
+            } else {
+                list.innerHTML = '';
+                cart.forEach((item, index) => {
+                    totalAmount += item.price;
+                    list.innerHTML += `
+                        <div class="flex justify-between items-center bg-white/5 p-4 rounded luxury-border">
+                            <div>
+                                <h5 class="text-[10px] font-bold uppercase tracking-widest">${item.name}</h5>
+                                <p class="text-xs gold-grad italic mt-1">₹${item.price}</p>
+                            </div>
+                            <button onclick="removeItem(${index})" class="text-red-800 text-[9px] font-bold border-b border-red-800">REMOVE</button>
+                        </div>
+                    `;
+                });
+            }
+            total.innerText = `₹${totalAmount}`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) return alert("Your platter is empty!");
+            
+            let message = "🔱 *Flavora Royal Order Notification* 🔱%0a-------------------------------%0a";
+            cart.forEach((item, i) => {
+                message += `${i+1}. ${item.name} - ₹${item.price}%0a`;
+            });
+            message += `-------------------------------%0a*Grand Total: ₹${totalAmount}*%0a%0a_Please prepare the delicacies for delivery._`;
+            
+            const phone = "911145678900"; // Replace with real restaurant phone
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+  </html>
